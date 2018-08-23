@@ -39,7 +39,7 @@ class Student
       #binding.pry
       self.new_from_db(row)
     end
-    instance.first
+    instance[1]
   end
 
   def save
