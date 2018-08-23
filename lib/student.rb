@@ -35,10 +35,11 @@ class Student
       WHERE name = ?
       LIMIT 1
     SQL
-    instance.first = DB[:conn].execute(sql, name).map do |row|
+    instance = DB[:conn].execute(sql, name).map do |row|
       #binding.pry
       self.new_from_db(row)
     end
+    instance.first
   end
 
   def save
