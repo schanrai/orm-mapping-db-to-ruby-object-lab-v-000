@@ -3,9 +3,9 @@
 class Student
   attr_accessor :id, :name, :grade
 
-  def self.new_from_db(row)
-    # create a new Student object in Ruby given a row from the database
+    #create a new Student object in Ruby given a row from the database
     #row is an array
+  def self.new_from_db(row)
       new_student = self.new  # self.new is the same as running Student.new
       new_student.id = row[0]
       new_student.name =  row[1]
@@ -13,9 +13,9 @@ class Student
       new_student  # return the newly created instance
   end
 
-  def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
+  def self.all
     sql = <<-SQL
       SELECT *
       FROM students
