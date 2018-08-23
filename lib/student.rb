@@ -38,7 +38,7 @@ class Student
     instance = DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
     end
-    #binding.pry
+    binding.pry
     instance.flatten
   end
 
