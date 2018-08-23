@@ -41,6 +41,7 @@ class Student
     instance.first
   end
 
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
@@ -49,6 +50,7 @@ class Student
 
     DB[:conn].execute(sql, self.name, self.grade)
   end
+
 
   def self.create_table
     sql = <<-SQL
@@ -61,6 +63,7 @@ class Student
 
     DB[:conn].execute(sql)
   end
+
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
