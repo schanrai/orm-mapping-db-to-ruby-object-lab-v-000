@@ -39,7 +39,7 @@ class Student
       self.new_from_db(row)
     end
     binding.pry
-    instance.flatten
+    instance[0]
   end
 
 
