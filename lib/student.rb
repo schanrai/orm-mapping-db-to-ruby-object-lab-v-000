@@ -2,7 +2,8 @@ class Student
   attr_accessor :id, :name, :grade
 
   def self.new_from_db(row)
-    # create a new Student object given a row from the database
+    # create a new Student object in Ruby given a row from the database
+    #row is an array
       new_student = self.new  # self.new is the same as running Student.new
       new_student.id = row[0]
       new_student.name =  row[1]
@@ -19,16 +20,16 @@ class Student
     # find the student in the database given a name
     # return a new instance of the Student class
   end
-  
+
   def save
     sql = <<-SQL
-      INSERT INTO students (name, grade) 
+      INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
 
     DB[:conn].execute(sql, self.name, self.grade)
   end
-  
+
   def self.create_table
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
