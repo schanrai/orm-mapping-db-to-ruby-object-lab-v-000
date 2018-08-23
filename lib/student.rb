@@ -38,7 +38,7 @@ class Student
     DB[:conn].execute(sql, name).each do |row|
       #binding.pry
       instance = self.new_from_db(row)
-      instance[1]
+      instance.first
     end
   end
 
